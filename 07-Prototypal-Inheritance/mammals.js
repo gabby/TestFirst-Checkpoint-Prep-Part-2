@@ -8,7 +8,9 @@ Mammal.prototype.sayHello = function(){
 }
 
 Mammal.prototype.haveBaby = function(){
-	let newBaby = new Mammal("Baby " + this.name);
+	// let newBaby = new Mammal("Baby " + this.name);
+	let newBaby = Object.create(Mammal.prototype);
+	newBaby.name = "Baby " + this.name;
 	this.offspring.push(newBaby);
  	return newBaby;
 };

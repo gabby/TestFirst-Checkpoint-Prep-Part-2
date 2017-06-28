@@ -20,11 +20,18 @@ function filter(arr, func){
 };
 
 function contains(obj, val){
-	let newArr = Object.keys(obj); 
-	for (let i=0; i<newArr.length; i++){
-		if (obj[newArr[i]] == val) 
-			return true;
-	};
+	for (key in obj) {
+		if (obj.hasOwnProperty(key)){
+			if (obj[key] === val) {
+				return true;
+			}
+		}
+	}
+	// let newArr = Object.keys(obj); 
+	// for (let i=0; i<newArr.length; i++){
+	// 	if (obj[newArr[i]] == val) 
+	// 		return true;
+	// };
 	return false;
 }
 
